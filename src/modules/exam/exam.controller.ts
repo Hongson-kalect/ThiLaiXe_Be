@@ -111,7 +111,7 @@ export class ExamController {
     );
   }
 
-  @Delete()
+  @Delete(':id')
   async deleteExam(@Param('id', ParseIntPipe) id: number) {
     return new ResponseData(
       await this.examService.delExam(id),

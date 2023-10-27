@@ -114,7 +114,6 @@ export class QuestionService {
     });
     if (!question)
       throw new HttpException('Question not found', HttpStatus.NOT_FOUND);
-
     await this.questionRepository.delete(question);
 
     const exams = await this.examRepository.find({

@@ -69,7 +69,7 @@ export class QuestionController {
     );
   }
 
-  @Delete()
+  @Delete(':id')
   async deleteQuestion(@Param('id', ParseIntPipe) id: number) {
     return new ResponseData(
       await this.questionService.delQuestion(id),
