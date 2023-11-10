@@ -60,8 +60,12 @@ export class ExamSevice {
       questions: JSON.stringify(questions),
       createdAt: new Date().getTime(),
     });
-
-    this.examRepository.save(exam);
+    console.log(exam);
+    try {
+      await this.examRepository.save({ ...exam });
+    } catch (error) {
+      console.log('error', error);
+    }
 
     return exam;
   }

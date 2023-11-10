@@ -136,7 +136,7 @@ export class UserSevices {
       id: userId,
     });
 
-    if (!(user?.role === 'admin'))
+    if (!(user?.role !== 'admin'))
       throw new HttpException('Not have permission', HttpStatus.BAD_REQUEST);
 
     const targetUser = await this.userRepository.findOneBy({

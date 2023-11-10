@@ -12,7 +12,7 @@ export class Exam {
   @Column()
   questions: string;
 
-  @Column()
+  @Column({ nullable: true })
   ansers: string;
 
   @Column()
